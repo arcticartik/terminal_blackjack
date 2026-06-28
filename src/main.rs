@@ -2,7 +2,6 @@ use rand::RngExt;
 use std::io;
 use std::thread::sleep;
 use std::time::Duration;
-// add seeing dealers cards, maybe clean subtract logic, add ace logic
 
 struct Deck {
     cards: Vec<u32>,
