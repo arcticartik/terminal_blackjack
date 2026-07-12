@@ -24,8 +24,8 @@ pub enum Rank {
 }
 
 impl std::fmt::Display for Rank {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let suit_display = match self {
+    fn fmt(&self, format: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let rank_display = match self {
             Rank::Two => "2",
             Rank::Three => "3",
             Rank::Four => "4",
@@ -40,7 +40,7 @@ impl std::fmt::Display for Rank {
             Rank::King => "K",
             Rank::Ace => "A",
         };
-        write!(f, "{}", suit_display)
+        write!(format, "{}", rank_display)
     }
 }
 
@@ -67,13 +67,15 @@ impl Card {
             Rank::Ace => 11,
         }
     }
-
-    pub fn suit(&self) -> char {
-        match &self.suit {
+}
+impl std::fmt::Display for Suit {
+    fn fmt(&self, format: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let suit_display = match self {
             Suit::Clubs => '♣',
             Suit::Diamonds => '♦',
             Suit::Hearts => '♥',
             Suit::Spades => '♠',
-        }
+        };
+        write!(format, "{}", suit_display)
     }
 }
