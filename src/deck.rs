@@ -30,7 +30,7 @@ impl Deck {
         let suit = [Suit::Clubs, Suit::Diamonds, Suit::Hearts, Suit::Spades];
         let cards_in_deck: Vec<Card> = suit
             .iter()
-            .flat_map(|&s| ranks.iter().map(move |&rank| Card { rank, suit: s }))
+            .flat_map(|&suit| ranks.iter().map(move |&rank| Card { rank, suit }))
             .collect();
         Deck {
             cards: cards_in_deck,
